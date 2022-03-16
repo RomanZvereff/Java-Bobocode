@@ -1,11 +1,8 @@
 package com.bobocode.cs;
 
 
-import com.bobocode.util.ExerciseNotCompletedException;
-
 import java.util.NoSuchElementException;
 import java.util.Objects;
-import java.util.Optional;
 
 /**
  * {@link LinkedList} is a list implementation that is based on singly linked generic nodes. A node is implemented as
@@ -75,7 +72,6 @@ public class LinkedList<T> implements List<T> {
     @Override
     public void add(int index, T element) {
 //        throw new ExerciseNotCompletedException(); // todo: implement this method
-        Objects.requireNonNull(element);
         Objects.checkIndex(index, size + 1);
         Node<T> newNode = new Node<>(element);
         if (index == 0) {
@@ -110,10 +106,7 @@ public class LinkedList<T> implements List<T> {
     public void set(int index, T element) {
 //        throw new ExerciseNotCompletedException(); // todo: implement this method
         Objects.checkIndex(index, size);
-        Node<T> currentNode = first;
-        for (int i = 0; i < index; i++) {
-            currentNode = currentNode.next;
-        }
+        Node<T> currentNode = getNodeByIndex(index);
         currentNode.element = element;
     }
 
@@ -128,11 +121,7 @@ public class LinkedList<T> implements List<T> {
     public T get(int index) {
 //        throw new ExerciseNotCompletedException(); // todo: implement this method
         Objects.checkIndex(index, size());
-        Node<T> currentNode = first;
-        for (int i = 0; i < index; i++) {
-            currentNode = currentNode.next;
-        }
-        return currentNode.element;
+        return getNodeByIndex(index).element;
     }
 
     /**
@@ -183,9 +172,9 @@ public class LinkedList<T> implements List<T> {
             first = currentNode.next;
         }else {
             if (index == (size() - 1)) {
-                currentNode = getNodeByIndex(index - 1);
-                element = currentNode.next.element;
-                currentNode.next = null;
+                element = last.element;
+                last = getNodeByIndex(index - 1);
+                last.next = null;
             } else {
                 currentNode = getNodeByIndex(index - 1);
                 element = currentNode.next.element;
@@ -195,7 +184,6 @@ public class LinkedList<T> implements List<T> {
         size--;
         return element;
     }
-
 
     /**
      * Checks if a specific exists in he list
