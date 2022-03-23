@@ -1,10 +1,9 @@
 package com.bobocode.se;
 
-import com.bobocode.util.ExerciseNotCompletedException;
-
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
@@ -15,7 +14,7 @@ import java.util.*;
  */
 public class FileStats {
 
-    private char[] chars;
+    private List<Character> chars;
 
     /**
      * Creates a new immutable {@link FileStats} objects using data from text file received as a parameter.
@@ -26,21 +25,25 @@ public class FileStats {
     public static FileStats from(String fileName) {
         FileStats fileStats = new FileStats();
         try {
-            Path filePath = Paths.get(FileStats.class.getClassLoader().getResource(fileName).toURI());
-            fileStats.chars = fileStats.convertFileToCharArray(filePath.toFile());
-        } catch (FileNotFoundException | URISyntaxException | NullPointerException e) {
+            fileStats.chars = fileStats.convertFileToCharArray(new File(fileName));
+        } catch (IOException | URISyntaxException | NullPointerException e) {
             throw new FileStatsException("File not found");
         }
         return fileStats;
     }
 
-    private char[] convertFileToCharArray(File fileName) throws FileNotFoundException {
-        StringBuilder sb = new StringBuilder();
-        Scanner scanner = new Scanner(fileName);
-        while (scanner.hasNextLine()) {
-            sb.append(scanner.nextLine()).append(System.lineSeparator());
+    private List<Character> convertFileToCharArray(File file) throws IOException, URISyntaxException, NullPointerException {
+        List<Character> characters = new ArrayList<>();
+        URL res = getClass().getClassLoader().getResource(file.getName());
+        if (res == null)
+            throw new NullPointerException();
+
+        BufferedReader br = new BufferedReader(new FileReader(Paths.get(res.toURI()).toFile()));
+        int c;
+        while ((c = br.read()) != -1) {
+            characters.add((char) c);
         }
-        return (sb.length() > 0) ? sb.substring(0, sb.length() - 1).toCharArray() : new char[0];
+        return characters;
     }
 
     /**
@@ -50,13 +53,7 @@ public class FileStats {
      * @return a number that shows how many times this character appeared in a text file
      */
     public int getCharCount(char character) {
-        int count = 0;
-        for (char c : chars) {
-            if (c == character) {
-                count++;
-            }
-        }
-        return count;
+        return (int) chars.stream().filter(c -> c == character).count();
     }
 
     /**
@@ -87,13 +84,7 @@ public class FileStats {
      * @return {@code true} if this character has appeared in the text, and {@code false} otherwise
      */
     public boolean containsCharacter(char character) {
-        boolean isContains = false;
-        for (char c : chars) {
-            if (c == character && !Character.isWhitespace(c)) {
-                isContains = true;
-                break;
-            }
-        }
-        return isContains;
+        return chars.stream().filter(c -> !Character.isWhitespace(c)).anyMatch(c -> c == character);
     }
+
 }
