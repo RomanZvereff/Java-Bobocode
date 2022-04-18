@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="5-2-1-crazy-streams" />
+        <module name="6-1-1-stack" />
+        <module name="1-5-0-hello-annotations" />
+        <module name="2-2-4-linked-list" />
+        <module name="spring-framework-exercises-model" />
+        <module name="spring-framework-tutorial-model" />
+        <module name="account-rest-api" />
+        <module name="spring-framework-tutorial-util" />
+        <module name="rest-basics" />
+        <module name="spring-framework-exercises-util" />
+        <module name="6-1-2-linked-list" />
+        <module name="3-6-3-crazy-regex" />
+        <module name="2-2-1-node" />
+        <module name="hello-spring-mvc" />
+        <module name="5-3-1-crazy-optionals" />
+        <module name="1-3-0-hello-generics" />
+        <module name="3-6-2-file-stats" />
+        <module name="6-1-3-binary-search-tree" />
+        <module name="lesson-demo" />
+        <module name="4-3-1-flight-search" />
+        <module name="bean-configuration-exercise" />
+        <module name="5-4-1-fun-prime-numbers" />
+        <module name="hello-application-context" />
+        <module name="transactional-user-service" />
+        <module name="5-0-1-lambda-functions-map" />
+        <module name="2-2-2-stack" />
+        <module name="data-structures-and-algorithms-util" />
+        <module name="3-6-1-file-reader" />
+        <module name="0-0-intro" />
+        <module name="account-jsp" />
+        <module name="bean-overriding" />
+        <module name="2-2-3-linked-queue" />
+        <module name="1-3-1-crazy-generics" />
+        <module name="jpa-tx-management" />
+        <module name="5-0-2-stream-sum-of-squares" />
+        <module name="java-fundamentals-util" />
+        <module name="aop-basics" />
+        <module name="spring-framework-ioc-basics" />
+        <module name="profiles-and-properties" />
+        <module name="advanced-ioc" />
+        <module name="2-2-5-array-list" />
+        <module name="mvc-basics" />
+        <module name="2-2-6-binary-search-tree" />
+        <module name="5-1-1-crazy-lambdas" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="0-0-intro" target="11" />
+      <module name="1-0-java-basics" target="11" />
+      <module name="1-3-0-hello-generics" target="11" />
+      <module name="1-3-1-crazy-generics" target="11" />
+      <module name="1-5-0-hello-annotations" target="11" />
+      <module name="2-0-data-structures-and-algorithms" target="11" />
+      <module name="2-2-1-node" target="11" />
+      <module name="2-2-2-stack" target="11" />
+      <module name="2-2-3-linked-queue" target="11" />
+      <module name="2-2-4-linked-list" target="11" />
+      <module name="2-2-5-array-list" target="11" />
+      <module name="2-2-6-binary-search-tree" target="11" />
+      <module name="3-0-java-core" target="11" />
+      <module name="3-6-1-file-reader" target="11" />
+      <module name="3-6-2-file-stats" target="11" />
+      <module name="3-6-3-crazy-regex" target="11" />
+      <module name="4-0-object-oriented-programming" target="11" />
+      <module name="4-3-1-flight-search" target="11" />
+      <module name="5-0-1-lambda-functions-map" target="11" />
+      <module name="5-0-2-stream-sum-of-squares" target="11" />
+      <module name="5-0-functional-programming" target="11" />
+      <module name="5-1-1-crazy-lambdas" target="11" />
+      <module name="5-2-1-crazy-streams" target="11" />
+      <module name="5-3-1-crazy-optionals" target="11" />
+      <module name="5-4-1-fun-prime-numbers" target="11" />
+      <module name="6-0-test-driven-development" target="11" />
+      <module name="6-1-1-stack" target="11" />
+      <module name="6-1-2-linked-list" target="11" />
+      <module name="6-1-3-binary-search-tree" target="11" />
+      <module name="account-jsp" target="11" />
+      <module name="account-rest-api" target="11" />
+      <module name="advanced-ioc" target="1.10" />
+      <module name="aop-basics" target="1.10" />
+      <module name="bean-configuration-exercise" target="11" />
+      <module name="bean-overriding" target="1.10" />
+      <module name="data-structures-and-algorithms-util" target="11" />
+      <module name="hello-application-context" target="11" />
+      <module name="hello-spring-mvc" target="11" />
+      <module name="java-fundamentals-course" target="11" />
+      <module name="java-fundamentals-util" target="11" />
+      <module name="jpa-tx-management" target="1.10" />
+      <module name="lesson-demo" target="11" />
+      <module name="mvc-basics" target="1.10" />
+      <module name="profiles-and-properties" target="1.10" />
+      <module name="rest-basics" target="1.10" />
+      <module name="spring-framework-exercises" target="11" />
+      <module name="spring-framework-exercises-model" target="11" />
+      <module name="spring-framework-exercises-util" target="11" />
+      <module name="spring-framework-ioc-basics" target="1.10" />
+      <module name="spring-framework-tutorial" target="1.10" />
+      <module name="spring-framework-tutorial-model" target="1.10" />
+      <module name="spring-framework-tutorial-util" target="1.10" />
+      <module name="transactional-user-service" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
